@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (gameObject.tag  == "Player")
+        if (collision.gameObject.tag  == "Player")
         {
+            GameManager.Instance.Check_1 = true;
             Destroy(this.gameObject);
-        }
+        }        
     }
 }

@@ -13,5 +13,11 @@ public class Monster : MonoBehaviour
 
     void Update()
     {
+
+    }
+
+    private void MonsterMove()
+    {
+        
     }
 }
