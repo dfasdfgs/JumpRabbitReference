@@ -21,9 +21,12 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance.Move_On)
+        {
         Move();
         Jump();
         JumpCheck();
+        }
     }
 
     private void Move()
