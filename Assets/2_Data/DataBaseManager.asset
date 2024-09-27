@@ -12,3 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efe0561d82706884eb52cb8345962bf0, type: 3}
   m_Name: DataBaseManager
   m_EditorClassIdentifier: 
+  Speed: 4
+  JumpPower: 3
+  Jumplimt: 7
+  H_sco: 0
+  Poin: {fileID: 6617553488565187097, guid: 21cdeec3fb59cdf4bb50a410f2961a2e, type: 3}
+  Item: {fileID: 8690529005675397958, guid: 089913fb548ddf245be31c7072b07374, type: 3}
+  Monster: {fileID: 4441017228974300889, guid: 93eb660d4233d164f93519c26c64aea6, type: 3}

@@ -5,12 +5,13 @@ public class Block : MonoBehaviour
 
     private static readonly int GRAVITY_SCALE = 2;
 
-
-    public GameObject spwanObject;
-    private bool isFloor;
+    public Camera camera;
+    public Transform spwanObject;
+    private bool isFloor = true;
 
     private void Awake()
     {
+        camera = GameObject.Find("Main Camera").GetComponent<Camera>();
         GameManager.Instance.block_On = false;
     }
 
@@ -22,7 +23,7 @@ public class Block : MonoBehaviour
 
     private void Update()
     {
-        if (!isFloor)
+        if (isFloor)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
             {
@@ -56,11 +57,15 @@ public class Block : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Floor")
+        if (isFloor)
         {
-            isFloor = true;
-            GameManager.Instance.block_On = true;
-        }
+            if (collision.gameObject.tag == "Floor")
+            {
+                isFloor = false;
 
+                GameManager.Instance.block_On = true;
+                GameManager.Instance.Block_();
+            }
+        }
     }
 }

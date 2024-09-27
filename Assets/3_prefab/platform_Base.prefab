@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4475570589317139205}
   - component: {fileID: 3987855160011220880}
   - component: {fileID: 646200666754077573}
+  - component: {fileID: 7455528548767854645}
   m_Layer: 0
   m_Name: platform_Base
   m_TagString: Floor
@@ -29,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 3079559671200268}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.57, z: 0}
-  m_LocalScale: {x: 5.2201, y: 1.22386, z: 1}
+  m_LocalPosition: {x: 0, y: 2.2271, z: 0}
+  m_LocalScale: {x: 5.2201, y: 0.77811205, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -171,4 +172,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade5ec02489411046a6478063fa454fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spwanObject: {fileID: 3079559671200268}
+  spwanObject: {fileID: 5601496588995304790}
+--- !u!111 &7455528548767854645
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3079559671200268}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 4094b65e3b179584dbb51b527fc6760f, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 4094b65e3b179584dbb51b527fc6760f, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

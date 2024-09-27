@@ -1,17 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using static Unity.VisualScripting.Member;
 
 public class PlayerMove : MonoBehaviour
 {
     private Rigidbody2D rigidbody2d;
 
     public float Speed = 4f;
-    public float JumpPower = 6f;
-    private bool justJump =false;
+    public float JumpPower = 5f;
+    public float Jumplimt = 10f;
+
+    private bool justJump = false;
     private Animator animator;
     private bool faceRight;
     private bool isFloor = true;
+
+    public AudioSource source;
+    public AudioClip clip;
 
     void Start()
     {
@@ -23,9 +27,9 @@ public class PlayerMove : MonoBehaviour
     {
         if (GameManager.Instance.Move_On)
         {
-        Move();
-        Jump();
-        JumpCheck();
+            Move();
+            Jump();
+            JumpCheck();
         }
     }
 
@@ -55,7 +59,9 @@ public class PlayerMove : MonoBehaviour
             justJump = false;
 
             rigidbody2d.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);
+            source.PlayOneShot(clip);
             animator.SetTrigger("Jump");
+            JumpPower = 5;
         }
     }
 
@@ -72,9 +78,15 @@ public class PlayerMove : MonoBehaviour
     {
         if (isFloor)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyUp(KeyCode.Space))
             {
                 justJump = true;
+            }
+            else if (Input.GetKey(KeyCode.Space))
+            {
+                //최대 10까지...
+                if (Jumplimt > JumpPower)
+                    JumpPower += 0.01f;
             }
         }
     }

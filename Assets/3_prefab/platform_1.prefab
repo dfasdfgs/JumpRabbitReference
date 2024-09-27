@@ -8,13 +8,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2074131055847493659, guid: 57ebeec9d334d49438a8340834c5b995, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074131055847493659, guid: 57ebeec9d334d49438a8340834c5b995, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074131055847493659, guid: 57ebeec9d334d49438a8340834c5b995, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4291673373564944441, guid: 57ebeec9d334d49438a8340834c5b995, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4291673373564944441, guid: 57ebeec9d334d49438a8340834c5b995, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0352
+      value: 2.45
       objectReference: {fileID: 0}
     - target: {fileID: 4291673373564944441, guid: 57ebeec9d334d49438a8340834c5b995, type: 3}
       propertyPath: m_LocalPosition.z
@@ -50,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8518951899606804323, guid: 57ebeec9d334d49438a8340834c5b995, type: 3}
       propertyPath: m_Name
-      value: platform Variant 1
+      value: platform_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

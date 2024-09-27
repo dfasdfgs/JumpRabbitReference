@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Monster : MonoBehaviour
@@ -11,14 +9,17 @@ public class Monster : MonoBehaviour
 
     public float MoveSpeed = 3f;
 
+    public Animator animator;
+
     void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-
+        MonsterMove();
     }
 
     private void MonsterMove()
@@ -29,5 +30,23 @@ public class Monster : MonoBehaviour
         {
             this.transform.Translate(MoveSpeed * Time.deltaTime, 0, 0);
         }
+        else
+        {
+            TurnTime = Random.Range(1, 5);
+            moveTime = 0;
+
+            transform.Rotate(0, 180, 0);
+        }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            GameManager.Instance.HP_now_lod -= 1;
+            animator.SetTrigger("Attack");
+        }
+
+    }
+
 }
