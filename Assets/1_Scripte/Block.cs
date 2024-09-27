@@ -1,12 +1,19 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Block : MonoBehaviour
 {
 
     private static readonly int GRAVITY_SCALE = 2;
 
+
     public Camera camera;
+    public GameObject cam;
+    public float speed = 1f;
+
     public Transform spwanObject;
+
     private bool isFloor = true;
 
     private void Awake()
@@ -64,8 +71,27 @@ public class Block : MonoBehaviour
                 isFloor = false;
 
                 GameManager.Instance.block_On = true;
-                GameManager.Instance.Block_();
+                StartCoroutine(Cam_O());
             }
         }
+    }
+
+    IEnumerator Cam_O()
+    {
+        Vector3 Pos = this.transform.position;
+
+        Pos.z = -10f;
+
+        camera.orthographicSize = 4f;
+        camera.transform.position = Pos;
+
+        yield return new WaitForSeconds(2f);
+
+        camera.orthographicSize = 5;
+        camera.transform.position = new Vector3(0, -0f,-10);
+
+        GameManager.Instance.Block_();
+
+        yield break;
     }
 }
